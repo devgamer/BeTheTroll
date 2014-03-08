@@ -1,19 +1,46 @@
-name: BukkitPluginTest
-main: com.gmail.jamesnshiffer.bukkitPluginTest.BukkitPluginTest
-version: 1.0.0
+name: BeTheTroll
+main: io.github.starman3.beTheTroll.BeTheTroll
+version: 1.1.0
 
 commands:
-   troll:
-      description: Troll a certain player with lightning, fire, or TNT as many times or as long as you like!
-      usage: /troll [player] <lightning|fire|tnt> [times/ticks]
-      permission: BukkitPluginTest.troll
-      permission-message: You don't have permission BukkitPluginTest.troll
+   burn:
+      description: Burn a certain player for a certain amount of ticks.
+      usage: /burn [player] [ticks]
+      permission: BeTheTroll.burn
+      permission-message: You don't have permission BeTheTroll.burn
+   lightning:
+      description: Strike a player with lightning a certain amount of times.
+      usage: /lightning [player] [times]
+      permission: BeTheTroll.lightning
+      permission-message: You don't have permission BeTheTroll.lightning
+   tnt:
+      description: Blow a player up with a certain amount of falling TNT from a certain height.
+      usage: /tnt [player] [times dropped] [drop height in blocks above player's head]
+      permission: BeTheTroll.tnt
+      permission-message: You don't have permission BeTheTroll.tnt
+   pit:
+      description: Makes a pit with a certain width and length to the void below a certain player.
+      usage: /pit [player] [length] [width]
+      permission: BeTheTroll.pit
+      permission-message: You don't have permission BeTheTroll.pit
       
 permissions:
-   BukkitPluginTest.*:
+   BeTheTroll.*:
       description: Allows you to use all trolling commands
       children:
-         BukkitPluginTest.troll: true
-   BukkitPluginTest.troll:
-      description: Allows you to troll a user with lightning, fire, or TNT as many times or as long as you like!
+         BeTheTroll.burn: true
+         BeTheTroll.lightning: true
+         BeTheTroll.tnt: true
+         BeTheTroll.pit: true
+   BeTheTroll.burn:
+      description: Allows you to burn a certain player for a certain amount of ticks.
+      default: op
+   BeTheTroll.lightning:
+      description: Allows you to strike a player with lightning a certain amount of times.
+      default: op
+   BeTheTroll.tnt:
+      description: Allows you to blow a player up with a certain amount of falling TNT from a certain height.
+      default: op
+   BeTheTroll.pit:
+      description: Allows you to make a pit with a certain width and length to the void below a certain player.
       default: op
