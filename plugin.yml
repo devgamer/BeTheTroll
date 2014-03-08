@@ -1,0 +1,19 @@
+name: BukkitPluginTest
+main: com.gmail.jamesnshiffer.bukkitPluginTest.BukkitPluginTest
+version: 1.0.0
+
+commands:
+   troll:
+      description: Troll a certain player with lightning, fire, or TNT as many times or as long as you like!
+      usage: /troll [player] <lightning|fire|tnt> [times/ticks]
+      permission: BukkitPluginTest.troll
+      permission-message: You don't have permission BukkitPluginTest.troll
+      
+permissions:
+   BukkitPluginTest.*:
+      description: Allows you to use all trolling commands
+      children:
+         BukkitPluginTest.troll: true
+   BukkitPluginTest.troll:
+      description: Allows you to troll a user with lightning, fire, or TNT as many times or as long as you like!
+      default: op
